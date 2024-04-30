@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Pantalón",
+    "description": "Pantalón cargo",
+    "price": 350,
+    "thumbnail": "thumbnail2.jpg",
+    "code": "PA0054",
+    "stock": 30
+  },
+  {
+    "title": "Camisa Loufer",
+    "description": "White T-shirt Loufer",
+    "price": 240,
+    "thumbnail": "loufertshirt.jpg",
+    "code": "PA0054",
+    "stock": 92
+  },
+  {
+    "title": "MacBook Pro M1 Pro",
+    "description": "Apple Notebook chip M1",
+    "price": 240,
+    "thumbnail": "macosphoto.jpg",
+    "code": "MACM1PRO01",
+    "stock": 16
+  },
+  {
+    "title": "Chaqueta Pure Class",
+    "description": "Pure Class Italy",
+    "price": 270,
+    "thumbnail": "jacket23.jpg",
+    "code": "JACX25",
+    "stock": 73
+  },
+  {
+    "title": "Moto BMW",
+    "description": "BMW NG34",
+    "price": 4200,
+    "thumbnail": "motobmw.jpg",
+    "code": "BMW98",
+    "stock": 24
+  },
+  {
+    "title": "Audifonos",
+    "description": "Sony 3X90",
+    "price": 400,
+    "thumbnail": "thumbnail4.jpg",
+    "code": "AU007",
+    "stock": 89
+  }
+]
