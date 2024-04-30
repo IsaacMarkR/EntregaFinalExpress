@@ -46,5 +46,16 @@
     "thumbnail": "thumbnail4.jpg",
     "code": "AU007",
     "stock": 89
+  },
+  {
+    "id": "e9e5efd8-411b-46dd-b6e1-4b8c97d0a3f1",
+    "title": "Raqueta Babolat",
+    "description": "Babolat Racquet Aero Pure Strike 2023",
+    "code": "032784",
+    "price": 259,
+    "status": true,
+    "stock": "29",
+    "category": "Sport",
+    "thumbnails": []
   }
 ]
