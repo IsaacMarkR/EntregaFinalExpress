@@ -13,6 +13,10 @@ async function loadProducts() {
     }
 }
 
+async function saveProducts(products) {
+    await fs.writeFile(path, JSON.stringify(products, null, 2), 'utf8');
+}
+
 router.get('/', async (req, res) => {
     try {
         const data = await fs.readFile(path, 'utf8');
@@ -51,12 +55,36 @@ router.post('/', async (req, res) => {
             thumbnails
         };
         products.push(newProduct);
-
-        await fs.writeFile(path, JSON.stringify(products, null, 2), 'utf8');
+        await saveProducts(products);
         res.status(201).json(newProduct);
     } catch (error) {
         res.status(500).json({ error: 'Failed to add product' });
     }
+});
+
+router.put('/:id', async (req, res) => {
+    const { id } = req.params;
+    const products = await loadProducts();
+    const productIndex = products.findIndex(p => p.id === id);
+    if (productIndex === -1) {
+        return res.status(404).send('Product not found');
+    }
+
+    const updatedProduct = { ...products[productIndex], ...req.body };
+    products[productIndex] = updatedProduct;
+    await saveProducts(products);
+    res.json(updatedProduct);
+});
+
+router.delete('/:id', async (req, res) => {
+    const { id } = req.params;
+    const products = await loadProducts();
+    const newProducts = products.filter(p => p.id !== id);
+    if (products.length === newProducts.length) {
+        return res.status(404).send('Product not found');
+    }
+    await saveProducts(newProducts);
+    res.send('Product deleted');
 });
 
 module.exports = router;
